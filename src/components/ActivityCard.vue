@@ -1,8 +1,8 @@
 <script setup lang="ts">
-  import { CardComponent } from '@/components'
-
-  import { ref } from 'vue'
-  import { Icons, getIconByName } from '@/models/Icons'
+import { CardComponent } from '@/components'
+import { ref } from 'vue'
+import { Icons, getIconByName } from '@/models/Icons'
+import { useDetailStore } from '@/stores/DetailStore';
   const { size, title, icon } = defineProps<{
     size: number
     title: string
@@ -10,15 +10,16 @@
   }>()
   let selectedIcon = ref()
   selectedIcon.value = getIconByName(icon);
+  const detailStore = useDetailStore();
 </script>
 
 <template>
-  <CardComponent :size="size">
+  <CardComponent :size="size" @click="()=> detailStore.isActive = !detailStore.isActive">
     <section class="card">
       <article class="icon-container">
         <img class="icon" :src="selectedIcon" alt="" />
       </article>
-      <span>{{ title }}</span>
+      <span class="title">{{ title }}</span>
     </section>
   </CardComponent>
 </template>
@@ -43,5 +44,9 @@
   color: red;
   width: 1.5rem;
   height: 1.5rem;
+}
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>@/models/Icons

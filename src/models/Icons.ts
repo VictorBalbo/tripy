@@ -15,9 +15,9 @@ export const getIconByName = (icon: string) => {
     case Icons.Plane:
       return PlaneIcon;
     case Icons.Train:
-      return BusIcon;
-    case Icons.Bus:
       return TrainIcon;
+    case Icons.Bus:
+      return BusIcon;
     case Icons.Bed:
       return BedIcon;
   }
