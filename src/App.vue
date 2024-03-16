@@ -7,8 +7,8 @@ const detailStore = useDetailStore();
 
 <template>
   <section class="app">
-      <CardsView class="cards" :class="{ 'inactive': detailStore.isActive }"/>
-      <DetailsView class="details" :class="{ 'active': detailStore.isActive }" />
+      <CardsView class="cards-view" :class="{ 'inactive': detailStore.isActive }"/>
+      <DetailsView class="details-view" :class="{ 'active': detailStore.isActive }" />
   </section>
 </template>
 
@@ -20,29 +20,42 @@ const detailStore = useDetailStore();
   flex-direction: row;
   width: 100vw;
   overflow: hidden;
-  @media (max-width: $mobile-breakpoint) {
-    .cards {
+
+  @media (max-width: $min-breakpoint) {
+    .cards-view {
       width: 100vw;
-      min-width: 100vw;
+      min-width: var(--min-breakpoint);
     }
-    .details {
+  }
+  @media (min-width: $min-breakpoint) and (max-width: $mobile-breakpoint) {
+    .cards-view {
+      width: 100%;
+      min-width: 100%;
+    }
+    .details-view {
       width: 100vw;
       min-width: 100vw;
     }
 
-    .cards.inactive {
+    .cards-view.inactive {
       transform: translateX(-100vw);
     }
-    .details.active {
+    .details-view.active {
       transform: translateX(-100vw);
     }
   }
+  @media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint) {
+    .cards-view {
+      max-width: var(--min-breakpoint);
+    }
+  }
 }
-.cards {
+.cards-view {
   transition: transform .5s ease;
-  width: var(--mobile-breakpoint);
+  width: 100%;
+  max-width: var(--mobile-breakpoint);
 }
-.details {
+.details-view {
   transition: transform .5s ease;
 }
 </style>

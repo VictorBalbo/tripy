@@ -1,7 +1,14 @@
+// Min supported: 370px
+// 370px < Phone < 480px
+// 480px < Tablet < 961px
+// 961px < PC 
+
+$min-breakpoint: 370px;
 $mobile-breakpoint: 480px;
-$tablet-breakpoint: 641px;
+$tablet-breakpoint: 961px;
 
 :root {
+  --min-breakpoint: 370px;
   --mobile-breakpoint: 480px;
-  --tablet-breakpoint: 641px;
+  --tablet-breakpoint: 961px;
 }
