@@ -15,15 +15,13 @@ defineProps<{
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border-radius: 1rem;
-  height: var(--card-size-1);
-  min-height: var(--card-size-1);
+  height: var(--card-height);  
   color: var(--color-heading);
   padding: var(--default-spacing);
   flex-grow: 0;
 }
 .card.card-1 {
   width: var(--card-size-1);
-  height: var(--card-size-1);
 }
 .card.card-2 {
   width: var(--card-size-2);
