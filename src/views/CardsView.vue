@@ -5,7 +5,7 @@ import { CardGrid, HeaderComponent } from '@/components'
 
 <template>
   <section class="cards-view">
-    <HeaderComponent />
+    <HeaderComponent :date="new Date('05/18/2024')" name="EuroTrip"/>
     <CardGrid />
   </section>
 </template>
