@@ -21,13 +21,7 @@ const detailStore = useDetailStore();
   width: 100vw;
   overflow: hidden;
 
-  @media (max-width: $min-breakpoint) {
-    .cards-view {
-      width: 100vw;
-      min-width: var(--min-breakpoint);
-    }
-  }
-  @media (min-width: $min-breakpoint) and (max-width: $mobile-breakpoint) {
+  @media (max-width: $mobile-breakpoint) {
     .cards-view {
       width: 100%;
       min-width: 100%;
@@ -46,6 +40,7 @@ const detailStore = useDetailStore();
   }
   @media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint) {
     .cards-view {
+      min-width: var(--min-breakpoint);
       max-width: var(--min-breakpoint);
     }
   }
