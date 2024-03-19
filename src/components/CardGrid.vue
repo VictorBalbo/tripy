@@ -21,6 +21,5 @@ import { Icons } from '@/models/Icons';
   flex-direction: row;
   flex-wrap: wrap;
   gap: var(--default-spacing);
-  margin: 0 var(--default-spacing);
 }
 </style>@/models/Icons

@@ -13,7 +13,6 @@ const daysToTrip = Math.round((date.getTime() - now.getTime()) / (1000 * 3600 * 
 
 <style>
 .header{
-  margin: var(--default-spacing);
   color: var(--color-heading);
 }
 .daysToTrip{

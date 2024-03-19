@@ -10,7 +10,7 @@
 
   --default-spacing: .5rem;
   --card-height: 7.5rem;
-  --card-size-1: calc((min(100%, var(--mobile-breakpoint)) - (4 * var(--default-spacing))) / 3);
+  --card-size-1: calc((min(100%, var(--mobile-breakpoint)) - (2 * var(--default-spacing))) / 3);
   --card-size-2: calc((2 * var(--card-size-1)) + var(--default-spacing));
   --card-size-3: calc((3 * var(--card-size-1)) + (2 * var(--default-spacing)));
 }

@@ -15,5 +15,6 @@ import { CardGrid, HeaderComponent } from '@/components'
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding: var(--default-spacing);
 }
 </style>
