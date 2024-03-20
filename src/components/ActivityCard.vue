@@ -1,15 +1,12 @@
 <script setup lang="ts">
-import { CardComponent } from '@/components'
-import { ref } from 'vue'
-import { Icons, getIconByName } from '@/models/Icons'
+import { CardComponent, IconComponent } from '@/components'
 import { useDetailStore } from '@/stores/DetailStore';
+import { Icons } from '@/components/icons';
   const { size, title, icon } = defineProps<{
     size: number
     title: string
     icon: Icons
   }>()
-  let selectedIcon = ref()
-  selectedIcon.value = getIconByName(icon);
   const detailStore = useDetailStore();
 </script>
 
@@ -17,7 +14,7 @@ import { useDetailStore } from '@/stores/DetailStore';
   <CardComponent :size="size" @click="()=> detailStore.isActive = !detailStore.isActive">
     <section class="card">
       <article class="icon-container">
-        <img class="icon" :src="selectedIcon" alt="" />
+        <IconComponent :icon />        
       </article>
       <span class="title">{{ title }}</span>
     </section>

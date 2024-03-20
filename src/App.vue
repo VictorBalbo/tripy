@@ -8,7 +8,7 @@ const detailStore = useDetailStore();
 <template>
   <section class="app">
       <CardsView class="cards-view" :class="{ 'inactive': detailStore.isActive }"/>
-      <DetailsView class="details-view" :class="{ 'active': detailStore.isActive }" />
+      <DetailsView title="Plane" icon="Back" class="details-view" :class="{ 'active': detailStore.isActive }" />
   </section>
 </template>
 

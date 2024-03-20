@@ -1,7 +1,8 @@
-import type { Icons } from "./Icons"
+import { Icons } from "@/components/icons"
 
-export interface Activity {
+export interface ActivityMenuItem {
   Name: string
   Icon: Icons
-  Count: number
+  Notifications: number
+  Color: string
 }

@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { ActivityCard } from '@/components'
-import { Icons } from '@/models/Icons';
+import { Icons } from '@/components/icons';
 </script>
 
 <template>
   <section class="grid">
-    <ActivityCard :size="2" title="Ver Mapa" :icon="Icons.Plane"></ActivityCard>
-    <ActivityCard :size="1" title="Hospedagem" :icon="Icons.Bed"></ActivityCard>
-    <ActivityCard :size="3" title="Nova Atividade" :icon="Icons.Bus"></ActivityCard>
-    <ActivityCard :size="1" title="Voos" :icon="Icons.Plane"></ActivityCard>
-    <ActivityCard :size="1" title="Ônibus" :icon="Icons.Bus"></ActivityCard>
-    <ActivityCard :size="1" title="Trens" :icon="Icons.Train"></ActivityCard>
+    <ActivityCard :size="2" title="Ver Mapa" icon="Plane"></ActivityCard>
+    <ActivityCard :size="1" title="Hospedagem" icon="PlaneTravel"></ActivityCard>
+    <ActivityCard :size="3" title="Nova Atividade" icon="Bus"></ActivityCard>
+    <ActivityCard :size="1" title="Voos" icon="Tram"></ActivityCard>
+    <ActivityCard :size="1" title="Ônibus" icon="Bus"></ActivityCard>
+    <ActivityCard :size="1" title="Trens" icon="Train"></ActivityCard>
   </section>
 </template>
 

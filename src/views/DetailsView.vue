@@ -1,32 +1,39 @@
 <script setup lang="ts">
-import BackIcon from '@/components/icons/back.svg'
+import { IconComponent } from '@/components';
+import { Icons } from '@/components/icons';
 import { useDetailStore } from '@/stores/DetailStore';
+
+const { title, icon } = defineProps<{
+    title: string
+    icon: keyof typeof Icons
+  }>()
 const detailStore = useDetailStore();
+
 </script>
+
 <template>
-  <section>
-    <article class="icon-container" @click="() => detailStore.isActive = false">
-      <img class="icon" :src="BackIcon" alt="" />
+  <section class="details-view">
+    <article class="details-container">
+      <header>
+          <IconComponent :icon @click="() => detailStore.isActive = false"/>
+          <IconComponent icon="Close" @click="() => detailStore.isActive = false"/>
+      </header>
+      <div class="details-view">This will be de details view</div>
     </article>
-    <div class="details-view">This will be de details view</div>
   </section>
 </template>
 
-<style scoped>
-.icon-container {
-  background-color: white;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.icon-container img {
-  width: 1.5rem;
-  height: 1.5rem;
-}
+<style>
 .details-view {
-  
+  padding: var(--default-spacing);
+  width: 100%;
+}
+.details-container{
+  background-color: var(--color-background-glass);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 1rem;
+  height: 100%;
+  padding: var(--default-spacing);
 }
 </style>
